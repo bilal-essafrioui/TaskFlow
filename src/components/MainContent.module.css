@@ -1,0 +1,40 @@
+.main {
+    flex: 1;
+    padding: 24px;
+    background-color: #f5f6f8;
+    overflow-x: auto;
+}
+
+.board {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.column {
+    background-color: white;
+    border-radius: 12px;
+    padding: 16px;
+    min-width: 260px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.colTitle {
+    margin: 0 0 12px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.card {
+    background-color: #f0f2f5;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
