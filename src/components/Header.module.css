@@ -1,40 +1,45 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 56px;
-    background-color: #1B8C3E;
-    color: white;
-    padding: 0 16px;
+  height: 56px;
+  background: #1B8C3E;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
 }
 
 .left {
-    display: flex;
-    align-items: center;
-    gap: 12px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
 
 .menuBtn {
-    background: none;
-    border: none;
-    color: white;
-    font-size: 20px;
-    cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  color: white;
+  cursor: pointer;
+}
+
+.menuBtn:hover {
+  opacity: 0.8;
 }
 
 .logo {
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .avatar {
-    font-weight: 600;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 0.4rem 0.7rem;
+  border-radius: 50%;
+  font-weight: bold;
 }
-
 .right { display: flex; align-items: center; gap: 1rem; }
 .userName { font-size: 0.9rem; opacity: 0.9; }
 .logoutBtn { background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.3);
-color: white; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer;
-font-size: 0.85rem; transition: background 0.2s; }
+ color: white; padding: 0.4rem 0.8rem; border-radius: 6px; cursor: pointer;
+ font-size: 0.85rem; transition: background 0.2s; }
 .logoutBtn:hover { background: rgba(255,255,255,0.25); }

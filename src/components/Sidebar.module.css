@@ -1,43 +1,87 @@
 .sidebar {
-    width: 240px;
-    border-right: 1px solid #e5e5e5;
-    height: 100vh;
-    padding: 16px;
-    background-color: #ffffff;
-    transition: margin-left 0.3s ease, opacity 0.3s ease;
+  width: 240px;
+  background: white;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  transition: margin-left 0.3s ease, opacity 0.3s ease;
 }
 
+/* Etat ouvert */
 .open {
-    margin-left: 0;
-    opacity: 1;
+  margin-left: 0;
+  opacity: 1;
 }
 
+/* Etat fermé */
 .closed {
-    margin-left: -240px;
-    opacity: 0;
+  margin-left: -240px;
+  opacity: 0;
 }
 
 .title {
-    margin: 0 0 16px 0;
-    font-size: 18px;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
 }
 
 .list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  list-style: none;
 }
 
 .item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 8px 0;
-    cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.item:hover {
+  opacity: 0.7;
 }
 
 .dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.itemContent {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex: 1;
+  overflow: hidden;
+}
+
+.name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.actions {
+  display: flex;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+.item:hover .actions {
+  opacity: 1;
+}
+
+.actionBtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px 4px;
+  font-size: 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.actionBtn:hover {
+  background-color: rgba(0,0,0,0.1);
 }
