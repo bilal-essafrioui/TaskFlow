@@ -7,6 +7,7 @@ import Sidebar from '../components/Sidebar';
 import MainContent from '../components/MainContent';
 import ProjectForm from '../components/ProjectForm';
 import styles from './Dashboard.module.css';
+import HeaderMUI from '../components/HeaderMui';
 
 interface Project {
   id: string;
@@ -138,12 +139,15 @@ export default function Dashboard() {
 
   return (
     <div className={styles.layout}>
+      
       <Header
         title="TaskFlow"
         onMenuClick={() => setSidebarOpen(p => !p)}
         userName={authState.user?.name}
         onLogout={() => dispatch({ type: 'LOGOUT' })}
       />
+      
+      {/* <HeaderMUI/>*/}
 
       <div className={styles.body}>
         <Sidebar
