@@ -1,27 +1,25 @@
 .sidebar {
   width: 240px;
-  background: white;
+  background-color: #ffffff;
   border-right: 1px solid #ddd;
-  padding: 1rem;
-  transition: margin-left 0.3s ease, opacity 0.3s ease;
+  padding: 16px;
+  transition: all 0.3s ease;
 }
 
-/* Etat ouvert */
 .open {
   margin-left: 0;
   opacity: 1;
 }
 
-/* Etat fermé */
 .closed {
   margin-left: -240px;
   opacity: 0;
 }
 
 .title {
-  font-size: 1.1rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  font-size: 18px;
+  margin-bottom: 16px;
+  font-weight: bold;
 }
 
 .list {
@@ -31,57 +29,26 @@
 .item {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  padding: 0.5rem 0;
+  gap: 10px;
+  padding: 8px 0;
   cursor: pointer;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
 }
 
 .item:hover {
-  opacity: 0.7;
+  background-color: #f5f5f5;
+}
+
+.active {
+  background-color: #d4edda;
+  color: #155724;
+  font-weight: 600;
 }
 
 .dot {
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  flex-shrink: 0;
-}
-
-.itemContent {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  flex: 1;
-  overflow: hidden;
-}
-
-.name {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.actions {
-  display: flex;
-  gap: 4px;
-  opacity: 0;
-  transition: opacity 0.2s;
-}
-
-.item:hover .actions {
-  opacity: 1;
-}
-
-.actionBtn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 2px 4px;
-  font-size: 12px;
-  border-radius: 4px;
-  transition: background-color 0.2s;
-}
-
-.actionBtn:hover {
-  background-color: rgba(0,0,0,0.1);
 }

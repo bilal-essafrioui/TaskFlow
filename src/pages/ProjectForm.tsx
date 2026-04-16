@@ -1,62 +1,56 @@
 import { useState } from "react";
-import type { FormEvent } from "react";
 import styles from "./ProjectForm.module.css";
 
 interface ProjectFormProps {
-  submitLabel: string;
-  onSubmit: (name: string, color: string) => void | Promise<void>;
+  initialName?: string;
+  initialColor?: string;
+  onSubmit: (name: string, color: string) => void;
   onCancel: () => void;
+  submitLabel: string;
 }
 
-const DEFAULT_COLOR = "#1b8c3e";
-
 export default function ProjectForm({
-  submitLabel,
+  initialName = "",
+  initialColor = "#3498db",
   onSubmit,
   onCancel,
+  submitLabel,
 }: ProjectFormProps) {
-  const [name, setName] = useState("");
-  const [color, setColor] = useState(DEFAULT_COLOR);
+  const [name, setName] = useState(initialName);
+  const [color, setColor] = useState(initialColor);
 
-  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault();
-    const trimmedName = name.trim();
-    if (!trimmedName) return;
-    await onSubmit(trimmedName, color);
-    setName("");
-    setColor(DEFAULT_COLOR);
+  function handleSubmit(e: React.FormEvent) {
+    onSubmit(name, color); //BUG
   }
-
+  
   return (
     <form
       className={styles.form}
       onSubmit={handleSubmit}
     >
       <input
-        type="text"
-        placeholder="Nom du projet"
         value={name}
         onChange={(e) => setName(e.target.value)}
+        placeholder='Nom du projet'
         className={styles.input}
         required
       />
       <input
-        type="color"
-        aria-label="Couleur du projet"
+        type='color'
         value={color}
         onChange={(e) => setColor(e.target.value)}
-        className={styles.color}
+        className={styles.colorPicker}
       />
       <button
-        type="submit"
+        type='submit'
         className={styles.submit}
       >
         {submitLabel}
       </button>
       <button
-        type="button"
-        className={styles.cancel}
+        type='button'
         onClick={onCancel}
+        className={styles.cancel}
       >
         Annuler
       </button>
