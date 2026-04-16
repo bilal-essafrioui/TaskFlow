@@ -7,7 +7,7 @@ import Sidebar from '../components/Sidebar';
 import MainContent from '../components/MainContent';
 import ProjectForm from '../components/ProjectForm';
 import styles from './Dashboard.module.css';
-import HeaderMUI from '../components/HeaderMui';
+import HeaderMUI from '../components/HeaderMUI';
 
 interface Project {
   id: string;
@@ -34,6 +34,7 @@ export default function Dashboard() {
   const [error, setError] = useState<string | null>(null);
   const [saving, setSaving] = useState(false);
 
+  const dangerousName = '<img src=x onerror=alert("HACK")>';
  
   useEffect(() => {
     async function fetchData() {
@@ -139,7 +140,7 @@ export default function Dashboard() {
 
   return (
     <div className={styles.layout}>
-      
+      <p>{dangerousName}</p>
       <Header
         title="TaskFlow"
         onMenuClick={() => setSidebarOpen(p => !p)}
